@@ -1,0 +1,12 @@
+[submodule "mda/sources"]
+	path = mda/sources
+	url = https://github.com/5GZORRO/mda
+[submodule "isbp/sources"]
+	path = isbp/sources
+	url = https://github.com/5GZORRO/sla-breach-predictor
+[submodule "tee-manager/sources"]
+	path = tee-manager/sources
+	url = https://gitlab.ubiwhere.com/5GZORRO/TEE/tee-manager.git
+[submodule "sla-monitor/sources"]
+	path = sla-monitor/sources
+	url = https://gitlab.ubiwhere.com/5GZORRO/sla-monitor.git

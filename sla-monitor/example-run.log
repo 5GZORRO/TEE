@@ -1,0 +1,138 @@
+root@node1:~# kubectl -n scone logs tee-manager-sconify-tee-manager-54f65b866f-mv272
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|DEBUG] tools/libsgx/src/builder.c:810:finalize_builder(): enclave base: 0x1000000000
+
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|INFO] src/enclave/dispatch.c:145:print_version(): Logging level set to DEBUG due to variable SCONE_LOG from untrusted environment
+[SCONE|WARN] src/enclave/dispatch.c:197:print_version(): Application runs in SGX debug mode.
+        Its memory can be read from outside the enclave with a debugger! This is not secure!
+[SCONE|DEBUG] src/enclave/dispatch.c:215:print_version(): fsgsbase enabled, supported by the kernel
+[SCONE|DEBUG] src/enclave/dispatch.c:222:print_version(): enclave xfrm: 7, xstate size: 832
+[SCONE|DEBUG] src/enclave/dispatch.c:223:print_version(): glibc mode: 0
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:177:Initializing enclave state either from vault file or via remote attestation
+[SCONE|WARN] scone_rrt::implementation::eai src/implementation/eai.rs:161:Insecure configuration that activates dynamic loading without singleton enclave!
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:181:Attesting with Service ID SDJLFSeer9w-UW-ZORRO/tee-manager/tee-manager at CAS 5-7-0.scone-cas.cf
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:261:Connected with LAS protocol v11
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:378:LAS offers these quoting mechanisms: SCONE: true EPID: true DCAP: false
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:215:Using SCONE LAS at 10.4.2.5 for attestation
+[SCONE|DEBUG] eai::client::cas_client::name_resolution rust-crates/eai/src/client/cas_client/name_resolution.rs:120:CAS address 5-7-0.scone-cas.cf resolved to 1 socket address(es)
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:178:Client identity generated: 428YFPYKeTuYdoFyTL4Gk74RpLAkZ73oXkEjbuxF9NPSeE6pHF
+[SCONE|DEBUG] eai::client::cas_client::connection rust-crates/eai/src/client/cas_client/connection.rs:117:Establishing connection to '150.165.15.87:18765' ...
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:89:No cached session for DNSNameRef("cas")
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:211:Not resuming any session
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:598:Using ciphersuite TLS13_CHACHA20_POLY1305_SHA256
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:235:Not resuming
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:449:TLS1.3 encrypted extensions: [Protocols([PayloadU8([83, 67, 79, 78, 69, 45, 57])]), ServerNameAck]
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:430:ALPN protocol is Some(b"SCONE-9")
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:768:Got CertificateRequest CertificateRequestPayloadTLS13 { context: PayloadU8([]), extensions: [SignatureAlgorithms([ECDSA_NISTP384_SHA384, ECDSA_NISTP256_SHA256, ED25519, RSA_PSS_SHA512, RSA_PSS_SHA384, RSA_PSS_SHA256, RSA_PKCS1_SHA512, RSA_PKCS1_SHA384, RSA_PKCS1_SHA256])] }
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:813:Attempting client auth
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:187:Established TLS connection to CAS, ALPN protocol version: 9
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:101:Available attestation collaterals: ["SCONE quote", "EPID group ID"]
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:151:Sending EnclaveHello message to CAS (client protocol version range: [2,12])
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:1157:Ticket saved
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:181:Received config from CAS - server protocol version range: [2,12]
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:411:Requesting key for FSPF at '/fspf/fs.fspf' (current tag: 55970aa8b2ffac20995169683d0b8713)
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:458:Received key for FSPF at '/fspf/fs.fspf'
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:256:Successfully attested at CAS
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:267:The CAS is the enclave's trust store
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:288:Initialized enclave state
+[SCONE|WARN] src/syscall/syscall.c:31:__scone_ni_syscall(): system call: membarrier, number 324 is not supported
+[SCONE|DEBUG] scone_rrt::implementation::state::keep_alive src/implementation/state/keep_alive.rs:14:CAS connection keep-alive thread started
+[SCONE|INFO] src/process/init.c:549:__scone_apply_secure_config(): Updating logging level according to trusted configuration.
+        Note that this will revert to the default logging level if the logging level is not configured.
+[SCONE|WARN] src/process/init.c:722:__scone_apply_secure_config(): Ignoring `SCONE_PWD` environment variable and host provided process working directory.
+        Applying process working directory from service's session configuration (/tee-manager)
+root@node1:~# kubectl -n scone logs tee-manager-sconify-tee-manager-54f65b866f-mv272
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|DEBUG] tools/libsgx/src/builder.c:810:finalize_builder(): enclave base: 0x1000000000
+
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|INFO] src/enclave/dispatch.c:145:print_version(): Logging level set to DEBUG due to variable SCONE_LOG from untrusted environment
+[SCONE|WARN] src/enclave/dispatch.c:197:print_version(): Application runs in SGX debug mode.
+        Its memory can be read from outside the enclave with a debugger! This is not secure!
+[SCONE|DEBUG] src/enclave/dispatch.c:215:print_version(): fsgsbase enabled, supported by the kernel
+[SCONE|DEBUG] src/enclave/dispatch.c:222:print_version(): enclave xfrm: 7, xstate size: 832
+[SCONE|DEBUG] src/enclave/dispatch.c:223:print_version(): glibc mode: 0
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:177:Initializing enclave state either from vault file or via remote attestation
+[SCONE|WARN] scone_rrt::implementation::eai src/implementation/eai.rs:161:Insecure configuration that activates dynamic loading without singleton enclave!
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:181:Attesting with Service ID SDJLFSeer9w-UW-ZORRO/tee-manager/tee-manager at CAS 5-7-0.scone-cas.cf
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:261:Connected with LAS protocol v11
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:378:LAS offers these quoting mechanisms: SCONE: true EPID: true DCAP: false
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:215:Using SCONE LAS at 10.4.2.5 for attestation
+[SCONE|DEBUG] eai::client::cas_client::name_resolution rust-crates/eai/src/client/cas_client/name_resolution.rs:120:CAS address 5-7-0.scone-cas.cf resolved to 1 socket address(es)
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:178:Client identity generated: 428YFPYKeTuYdoFyTL4Gk74RpLAkZ73oXkEjbuxF9NPSeE6pHF
+[SCONE|DEBUG] eai::client::cas_client::connection rust-crates/eai/src/client/cas_client/connection.rs:117:Establishing connection to '150.165.15.87:18765' ...
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:89:No cached session for DNSNameRef("cas")
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:211:Not resuming any session
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:598:Using ciphersuite TLS13_CHACHA20_POLY1305_SHA256
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:235:Not resuming
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:449:TLS1.3 encrypted extensions: [Protocols([PayloadU8([83, 67, 79, 78, 69, 45, 57])]), ServerNameAck]
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:430:ALPN protocol is Some(b"SCONE-9")
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:768:Got CertificateRequest CertificateRequestPayloadTLS13 { context: PayloadU8([]), extensions: [SignatureAlgorithms([ECDSA_NISTP384_SHA384, ECDSA_NISTP256_SHA256, ED25519, RSA_PSS_SHA512, RSA_PSS_SHA384, RSA_PSS_SHA256, RSA_PKCS1_SHA512, RSA_PKCS1_SHA384, RSA_PKCS1_SHA256])] }
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:813:Attempting client auth
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:187:Established TLS connection to CAS, ALPN protocol version: 9
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:101:Available attestation collaterals: ["SCONE quote", "EPID group ID"]
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:151:Sending EnclaveHello message to CAS (client protocol version range: [2,12])
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:1157:Ticket saved
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:181:Received config from CAS - server protocol version range: [2,12]
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:411:Requesting key for FSPF at '/fspf/fs.fspf' (current tag: 55970aa8b2ffac20995169683d0b8713)
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:458:Received key for FSPF at '/fspf/fs.fspf'
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:256:Successfully attested at CAS
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:267:The CAS is the enclave's trust store
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:288:Initialized enclave state
+[SCONE|WARN] src/syscall/syscall.c:31:__scone_ni_syscall(): system call: membarrier, number 324 is not supported
+[SCONE|DEBUG] scone_rrt::implementation::state::keep_alive src/implementation/state/keep_alive.rs:14:CAS connection keep-alive thread started
+[SCONE|INFO] src/process/init.c:549:__scone_apply_secure_config(): Updating logging level according to trusted configuration.
+        Note that this will revert to the default logging level if the logging level is not configured.
+[SCONE|WARN] src/process/init.c:722:__scone_apply_secure_config(): Ignoring `SCONE_PWD` environment variable and host provided process working directory.
+        Applying process working directory from service's session configuration (/tee-manager)
+root@node1:~# kubectl -n scone logs tee-manager-sconify-tee-manager-54f65b866f-mv272 -f
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/platform.c:199:platform_detect_sgx_driver(): found driver /dev/isgx
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|DEBUG] tools/libsgx/src/builder.c:810:finalize_builder(): enclave base: 0x1000000000
+
+[SCONE|DEBUG] tools/libsgx/src/layout.c:791:scone_enclave_create_layout(): enclave size: 2147483648
+[SCONE|INFO] src/enclave/dispatch.c:145:print_version(): Logging level set to DEBUG due to variable SCONE_LOG from untrusted environment
+[SCONE|WARN] src/enclave/dispatch.c:197:print_version(): Application runs in SGX debug mode.
+        Its memory can be read from outside the enclave with a debugger! This is not secure!
+[SCONE|DEBUG] src/enclave/dispatch.c:215:print_version(): fsgsbase enabled, supported by the kernel
+[SCONE|DEBUG] src/enclave/dispatch.c:222:print_version(): enclave xfrm: 7, xstate size: 832
+[SCONE|DEBUG] src/enclave/dispatch.c:223:print_version(): glibc mode: 0
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:177:Initializing enclave state either from vault file or via remote attestation
+[SCONE|WARN] scone_rrt::implementation::eai src/implementation/eai.rs:161:Insecure configuration that activates dynamic loading without singleton enclave!
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:181:Attesting with Service ID SDJLFSeer9w-UW-ZORRO/tee-manager/tee-manager at CAS 5-7-0.scone-cas.cf
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:261:Connected with LAS protocol v11
+[SCONE|DEBUG] eai::client::las_client rust-crates/eai/src/client/las_client.rs:378:LAS offers these quoting mechanisms: SCONE: true EPID: true DCAP: false
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:215:Using SCONE LAS at 10.4.2.5 for attestation
+[SCONE|DEBUG] eai::client::cas_client::name_resolution rust-crates/eai/src/client/cas_client/name_resolution.rs:120:CAS address 5-7-0.scone-cas.cf resolved to 1 socket address(es)
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:178:Client identity generated: 428YFPYKeTuYdoFyTL4Gk74RpLAkZ73oXkEjbuxF9NPSeE6pHF
+[SCONE|DEBUG] eai::client::cas_client::connection rust-crates/eai/src/client/cas_client/connection.rs:117:Establishing connection to '150.165.15.87:18765' ...
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:89:No cached session for DNSNameRef("cas")
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:211:Not resuming any session
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:598:Using ciphersuite TLS13_CHACHA20_POLY1305_SHA256
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:235:Not resuming
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:449:TLS1.3 encrypted extensions: [Protocols([PayloadU8([83, 67, 79, 78, 69, 45, 57])]), ServerNameAck]
+[SCONE|DEBUG] rustls::client::hs rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/hs.rs:430:ALPN protocol is Some(b"SCONE-9")
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:768:Got CertificateRequest CertificateRequestPayloadTLS13 { context: PayloadU8([]), extensions: [SignatureAlgorithms([ECDSA_NISTP384_SHA384, ECDSA_NISTP256_SHA256, ED25519, RSA_PSS_SHA512, RSA_PSS_SHA384, RSA_PSS_SHA256, RSA_PKCS1_SHA512, RSA_PKCS1_SHA384, RSA_PKCS1_SHA256])] }
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:813:Attempting client auth
+[SCONE|DEBUG] eai::client::cas_client rust-crates/eai/src/client/cas_client.rs:187:Established TLS connection to CAS, ALPN protocol version: 9
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:101:Available attestation collaterals: ["SCONE quote", "EPID group ID"]
+[SCONE|DEBUG] eai::client::cas_client::attestation::initial rust-crates/eai/src/client/cas_client/attestation/initial.rs:151:Sending EnclaveHello message to CAS (client protocol version range: [2,12])
+[SCONE|DEBUG] rustls::client::tls13 rust-cache/cargo/registry/src/github.com-1ecc6299db9ec823/rustls-0.19.1/src/client/tls13.rs:1157:Ticket saved
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:181:Received config from CAS - server protocol version range: [2,12]
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:411:Requesting key for FSPF at '/fspf/fs.fspf' (current tag: 55970aa8b2ffac20995169683d0b8713)
+[SCONE|DEBUG] eai::client::cas_client::enclave_config rust-crates/eai/src/client/cas_client/enclave_config.rs:458:Received key for FSPF at '/fspf/fs.fspf'
+[SCONE|DEBUG] scone_rrt::implementation::eai src/implementation/eai.rs:256:Successfully attested at CAS
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:267:The CAS is the enclave's trust store
+[SCONE|DEBUG] scone_rrt::implementation::state src/implementation/state.rs:288:Initialized enclave state
+[SCONE|WARN] src/syscall/syscall.c:31:__scone_ni_syscall(): system call: membarrier, number 324 is not supported
+[SCONE|DEBUG] scone_rrt::implementation::state::keep_alive src/implementation/state/keep_alive.rs:14:CAS connection keep-alive thread started
+[SCONE|INFO] src/process/init.c:549:__scone_apply_secure_config(): Updating logging level according to trusted configuration.
+        Note that this will revert to the default logging level if the logging level is not configured.
+[SCONE|WARN] src/process/init.c:722:__scone_apply_secure_config(): Ignoring `SCONE_PWD` environment variable and host provided process working directory.
+        Applying process working directory from service's session configuration (/tee-manager)

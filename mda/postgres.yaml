@@ -1,0 +1,99 @@
+apiVersion: v1
+items:
+
+  # services
+  # postgres
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        io.kompose.service: postgres-mda
+      name: postgres-mda
+    spec:
+      type: NodePort
+      ports:
+        - name: "5432"
+          port: 5432
+          targetPort: 5432
+          nodePort: 30037
+      selector:
+        io.kompose.service: postgres-mda
+    status:
+      loadBalancer: {}
+
+  # deployments
+  # postgres
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        io.kompose.service: postgres-mda
+      name: postgres-mda
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          io.kompose.service: postgres-mda
+      strategy:
+        type: Recreate
+      template:
+        metadata:
+          labels:
+            io.kompose.service: postgres-mda
+        spec:
+          containers:
+            - name: mda-bd
+              envFrom:
+              - secretRef:
+                  name: env-file-mda
+              image: postgres
+              ports:
+                - containerPort: 5432
+              resources: {}
+              volumeMounts:
+                - mountPath: /var/lib/postgresql/data
+                  name: mda-postgres-claim0
+          volumes:
+            - name: mda-postgres-claim0
+              persistentVolumeClaim:
+                claimName: mda-postgres-claim0
+          restartPolicy: Always
+    status: {}
+
+  # persistent volume
+  # postgres
+  - apiVersion: v1
+    kind: PersistentVolume
+    metadata:
+      name: mda-postgres-pv-volume
+      labels:
+        type: local
+    spec:
+      storageClassName: manual
+      capacity:
+        storage: 100Mi
+      accessModes:
+        - ReadWriteOnce
+      hostPath:
+        path: "/mnt/mda/production/postgres"
+
+ 
+  # persistent volume claim
+  # postgres
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      labels:
+        io.kompose.service: mda-postgres-claim0
+      name: mda-postgres-claim0
+    spec:
+      storageClassName: manual
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Mi
+    status: {}
+
+kind: List
+metadata: {}

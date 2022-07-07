@@ -1,0 +1,16 @@
+version: "3.3"  # optional since v1.27.0
+services:
+  sla-monitor:
+    image: registry.cbr.ubiwhere.com/sla_monitor-encrypted:1.0.22
+    devices: 
+      - /dev/isgx
+    volumes:
+      - /dev/isgx:/dev/isgx
+    environment:
+      SCONE_CONFIG_ID: SDJLFSeer9w-UW-ZORRO/sla_monitor/sla_monitor
+      SCONE_CAS_ADDR: 5-7-0.scone-cas.cf
+      SCONE_LAS_ADDR: 10.4.2.5
+      SCONE_ALLOW_DLOPEN: "2"
+      SCONE_HEAP: 8G
+      SCONE_STACK: 8M
+      SCONE_LOG: DEBUG

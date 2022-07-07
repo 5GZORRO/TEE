@@ -1,0 +1,11 @@
+--- old.go	2022-06-06 17:41:13.604976239 +0200
++++ new.go	2022-06-06 17:42:01.293816414 +0200
+@@ -45,7 +45,7 @@
+ }
+ 
+ func (type2 *unsafeType) UnsafeNew() unsafe.Pointer {
+-	return unsafe_New(type2.rtype)
++	return unsafe__New(type2.rtype)
+ }
+ 
+ func (type2 *unsafeType) New() interface{} {

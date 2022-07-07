@@ -1,0 +1,11 @@
+--- sources/mda/app/main.py	2022-06-09 16:24:51.045376440 +0200
++++ sources/mda/app/main.py.old	2022-06-09 16:24:42.449231216 +0200
+@@ -19,7 +19,7 @@
+ from dateutil.relativedelta import relativedelta
+ from timeloop import Timeloop
+ from datetime import timedelta
+-logging.basicConfig(filename='mda.json', level=logging.CRITICAL, format="%(asctime)s.%(msecs)03dZ | %(message)s", datefmt='%Y-%m-%dT%H:%M:%S')
++logging.basicConfig(filename='logs/'+'mda.json', level=logging.CRITICAL, format="%(asctime)s.%(msecs)03dZ | %(message)s", datefmt='%Y-%m-%dT%H:%M:%S')
+ logging.getLogger("uvicorn.error").setLevel(logging.CRITICAL)
+ logging.getLogger("kafka").setLevel(logging.CRITICAL)
+ 

@@ -1,0 +1,25 @@
+docker run --rm --device=/dev/isgx \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v ~/.docker/config.json:/root/.docker/config.json \
+-v $PWD/sconification/build-resources:/build-resources \
+-v $PWD/sconification/helm:/sconify-helm \
+-v $PWD/../cas/:/root/.cas/ \
+registry.scontain.com:5050/sconecuratedimages/community-edition-sconify-image:latest \
+sconify_image --name=isbp \
+--from=harbor.cns.ubiwhere.com/5gzorro/isbp:0.0.1 \
+--to=harbor.cns.ubiwhere.com/5gzorro/isbp-encrypted:0.0.1 \
+--cas=5-7-0.scone-cas.cf \
+--cli=registry.scontain.com:5050/sconecuratedimages/sconecli:sconify-image \
+--cas-debug --binary=/usr/bin/python3.9 -v \
+--disable-session-upload --allow-debug-mode --allow-tcb-vulnerabilities \
+--service-name="isbp" --name="isbp" \
+--namespace="SDJLFSeer9w-UW-ZORRO" \
+--k8s-helm-workload-type=deployment \
+--plain="/isbp" \
+--push-image \
+--identity=/root/.cas/config.json \
+--k8s-helm-set="useSGXDevPlugin=disabled" \
+--k8s-helm-set="scone.log=DEBUG" \
+--k8s-helm-set="imagePullSecrets[0].name=harbor-uw" \
+-v --plain-file=/usr/bin/uvicorn \
+-x --dlopen=2 --stack=4M --heap=1G

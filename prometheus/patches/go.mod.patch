@@ -1,0 +1,10 @@
+--- go.mod.old	2022-06-06 17:48:51.537022289 +0200
++++ go.mod	2022-06-06 17:49:49.182032582 +0200
+@@ -186,6 +186,7 @@
+ replace (
+ 	k8s.io/klog => github.com/simonpasquier/klog-gokit v0.3.0
+ 	k8s.io/klog/v2 => github.com/simonpasquier/klog-gokit/v3 v3.0.0
++	github.com/modern-go/reflect2 v1.0.2 => ./fixed-libraries/reflect2
+ )
+ 
+ // Exclude linodego v1.0.0 as it is no longer published on github.

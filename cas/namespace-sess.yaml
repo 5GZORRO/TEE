@@ -1,0 +1,10 @@
+name: SDJLFSeer9w-UW-ZORRO
+version: "0.3"
+
+access_policy:
+  read:
+   - CREATOR
+  update:
+   - CREATOR
+  create_sessions:
+    - CREATOR
