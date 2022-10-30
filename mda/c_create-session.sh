@@ -17,3 +17,4 @@ docker run -v ${PWD}/../cas/:/root/.cas/ -it registry.scontain.com:5050/sconecur
 echo -e "predecessor: "
 cat ${PREDECESSOR_FILE}
 
+echo ""

@@ -21,6 +21,6 @@ COPY sources/ .
 
 EXPOSE 8080
 
-#CMD ["/usr/bin/npm", "run", "start"]
+CMD ["/usr/local/bin/npm", "run", "start"]
 #CMD ["node", "index.js"]
-CMD ["node", "index.js"]
+#CMD ["/usr/local/bin/node", "index.js"]

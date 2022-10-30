@@ -21,6 +21,7 @@ sconify_image --name=${SERVICE} \
 --k8s-helm-set="scone.log=DEBUG" \
 --k8s-helm-set="imagePullSecrets[0].name=uw" \
 --k8s-helm-set="imagePullPolicy=IfNotPresent" \
+--k8s-helm-set="ports.containerPort=4000" \
 --push-image \
 --plain="/app" \
 --plain-file=/usr/bin/uvicorn \

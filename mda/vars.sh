@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #export REGISTRY=harbor.cns.ubiwhere.com/5gzorro
-export REGISTRY=registry.cbr.ubiwhere.com
+export REGISTRY=registry.ubiwhere.com
+#export REGISTRY=ubiwhere
 
 export SERVICE='mda'
 

@@ -11,7 +11,7 @@ sconify_image --name=${SERVICE} \
 --cas=5-7-0.scone-cas.cf \
 --cli=registry.scontain.com:5050/sconecuratedimages/sconecli:sconify-image \
 --cas-debug  \
---binary=${BINARY} -v \
+--binary=/usr/local/bin/npm -v \
 --disable-session-upload --allow-debug-mode --allow-tcb-vulnerabilities \
 --service-name="${SERVICE}" --name="${SERVICE}" \
 --namespace="SDJLFSeer9w-UW-ZORRO" \
@@ -22,7 +22,11 @@ sconify_image --name=${SERVICE} \
 --k8s-helm-set="imagePullSecrets[0].name=uw" \
 --k8s-helm-set="imagePullPolicy=IfNotPresent" \
 --push-image \
---plain="/${SERVICE}" \
+--plain-file=/usr/local/bin/node \
+#--plain-file=/usr/local/bin/npm \
+#--plain="/usr/local/lib" \
+#--plain="/usr/local/bin" \
+--plain="/sla_monitor" \
 -x --dlopen=2 --stack=8M --heap=8G
 
 #-v --plain-file="/code/app.py" \
